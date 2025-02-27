@@ -6,6 +6,7 @@ function App() {
     <>
       <h1 className="text-3xl font-bold underline text-blue-500">Hello world!</h1>
       <Button>Click me</Button>
+      <div>hii</div>
     </>
   );
 }
