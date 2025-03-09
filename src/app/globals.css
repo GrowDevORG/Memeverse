@@ -15,22 +15,41 @@
   font-family: var(--font-jaro);
 }
 
-/* ----- Marquee animation */
 
+.text-shadow-gray{
+  text-shadow: 0px 2px 3px rgb(123, 114, 114);
+}
+.text-shadow-gray-large{
+  text-shadow: 0px 3px 4px rgb(123, 114, 114);
+}
+/* ----- Marquee animation */
+/* 
 @keyframes marquee {
   from {
     transform: translateX(100%);
-    animation: animate 8s linear infinite ;
+    animation: animate 20s linear infinite ;
   }
   to {
     transform: translateX(-100%);
-    animation:animate 8s linear infinite ;
+    animation:animate 20s linear infinite ;
   }
  
+} */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
+
+
 .animate-marquee {
-  animation: marquee 8s linear infinite;
+  animation: marquee 10s linear infinite;
+  
 }
 
 .animate-none{

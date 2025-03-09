@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className="flex flex-col items-center justify-center bg-orange-200 text-white relative">
       <Image src="/image/pepe-d-l.png" alt="logo" width={330} height={330} className="absolute top-20 translate-y-28 left-0" />
-      <Image src="/image/pepe-d-r.png" alt="logo" width={450} height={450} className="absolute top-15 right-0" />
+      <Image src="/image/pepe-d-r.png" alt="logo" width={450} height={450} className="absolute top-15 right-0 z-10" />
       <div className="flex gap-2 border-8 border-orange-200 px-10 bg-amber-500 rounded-2xl transform translate-y-14">
         <Image
           src="/image/pepebatman.png"
