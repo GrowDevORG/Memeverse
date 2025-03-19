@@ -1,4 +1,4 @@
-import MemeUploader from '@/pages/meme-uploadpage'
+import MemeUploader from '@/components/meme-uploadpage'
 import React from 'react'
 
 const page = () => {

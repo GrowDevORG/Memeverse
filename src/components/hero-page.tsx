@@ -4,11 +4,11 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 import React from "react";
 
-const HeroPage = ({isSignedIn} : {isSignedIn : boolean}) => {
+const HeroPage = () => {
 
   return (
     <section className="flex flex-col">
-    <Navbar isSignedIn={isSignedIn} />
+    <Navbar  />
     <div className="flex flex-wrap justify-center items-center min-h-full px-4 md:px-8 py-10 relative  ">
 
       <div className=" w-full sm:w-3/4 md:w-1/2 flex justify-center">

@@ -1,18 +1,17 @@
 import Footer from "@/components/Footer";
-import AboutUs from "@/pages/aboutUs-page";
-import HeroPage from "@/pages/hero-page";
-import Seperation from "@/pages/seperation";
-import TrendingMemes from "@/pages/trending-page";
-import WhyChooseUs from "@/pages/why-choose-us";
-import { currentUser } from "@clerk/nextjs/server";
+import AboutUs from "@/components/aboutUs-page";
+import HeroPage from "@/components/hero-page";
+import Seperation from "@/components/seperation";
+import TrendingMemes from "@/components/trending-page";
+import WhyChooseUs from "@/components/why-choose-us";
 
 export default async function Home() {
 
-  const user = await currentUser();
+  //const user = await currentUser();
 
   return (
     <div className="flex flex-col bg-amber-500">
-      <HeroPage isSignedIn = {user ? true : false} />
+      <HeroPage />
       <Seperation />
       <AboutUs />
       <TrendingMemes />

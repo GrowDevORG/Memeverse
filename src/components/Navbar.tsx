@@ -1,18 +1,22 @@
 "use client";
 import React, { useState } from "react";
-import {  UserButton } from "@clerk/nextjs";
+import {   UserButton } from "@clerk/nextjs";
 import Link from 'next/link';
 import Image from "next/image";
 //import { useRouter } from "next/router";
  import { useRouter } from 'next/navigation';
+import useFetchUser from "@/hooks/useFetchUser";
+import { Skeleton } from "./ui/skeleton";
 
-const Navbar = ({isSignedIn} : {isSignedIn : boolean}) => {
+const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-   // const { openSignIn } = useClerk();
-   // const { isSignedIn } = useUser();
-    // const router = useRouter();
 
-    const router = useRouter()
+   // const { isSignedIn } = useUser();
+    const router = useRouter();
+
+    const {isAuthenticated, isPending} = useFetchUser();
+
+   
 
   return (
      <nav className="flex justify-between items-center p-4 ">
@@ -28,9 +32,10 @@ const Navbar = ({isSignedIn} : {isSignedIn : boolean}) => {
           <li className="text-white jaro-regular"><Link href="/about-us">About us</Link></li>
           <li className="text-white jaro-regular"><Link href="/">Leaderboard</Link></li>
         </ul>
-        {isSignedIn ? (
+        {isAuthenticated ? (
           <UserButton />
         ) : (
+          isPending ? <Skeleton className="h-12 w-12 rounded-full" /> :
           <button
             onClick={() => router.push("/auth/sign-in")}
             className="bg-orange-600 rounded-md text-white px-3 py-1 cursor-pointer jaro-regular"
@@ -62,9 +67,10 @@ const Navbar = ({isSignedIn} : {isSignedIn : boolean}) => {
             <li><Link href="/about-us" className="text-white jaro-regular">About us</Link></li>
             <li><Link href="/" className="text-white jaro-regular">Leaderboard</Link></li>
           </ul>
-          {isSignedIn ? (
+          {isAuthenticated ? (
           <UserButton />
         ) : (
+          isPending ? <Skeleton className="h-12 w-12 rounded-full" /> :
           <button
             onClick={() => router.push("/auth/sign-in")}
             className="bg-orange-600 rounded-md text-white px-3 py-1 cursor-pointer jaro-regular"
